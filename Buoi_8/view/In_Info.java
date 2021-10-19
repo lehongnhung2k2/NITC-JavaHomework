@@ -13,14 +13,14 @@ import Buoi_8.model.entity.SinhVien;
 public class In_Info {
 	
 	public static void DS_NV() {
-		List<NhanVien> nv = Buoi_8.controller.singleton.DS_NV.getNV();
+		List<NhanVien> nv = DS_NV.getNV();
 		for (NhanVien i: nv) {
 			i.show();
 		}
 	}
 	
 	public static void DS_SV() {
-		List<SinhVien> sv = Buoi_8.controller.singleton.DS_SV.getSV();
+		List<SinhVien> sv = DS_SV.getSV();
 		for (SinhVien i: sv) {
 			i.show();
 		}
@@ -44,24 +44,24 @@ public class In_Info {
 			System.out.println("Mời bạn nhập id");
 			id = ScannerUtils.readId(in, "Bạn phải nhập 1 số");
 			
-			if (Buoi_8.controller.singleton.DS_NV.getGV(id)!=null) {
-				System.out.println("Tên: " +Buoi_8.controller.singleton.DS_NV.getGV(id));
+			if (DS_NV.getGV(id)!=null) {
+				System.out.println("Tên: " +DS_NV.getGV(id));
 				if (Bang_LichDay.getID(id)!=null)
 					System.out.println("Phòng: "+ Bang_LichDay.getID(id).getPhong()+ " | Thời gian: "+ Bang_LichDay.getID(id).getTime());
 				else System.out.println("Chưa có lịch nào");
 			}
 			
 			
-			if(Buoi_8.controller.singleton.DS_NV.getNVV(id)!= null) {
-				System.out.println("Tên: " +Buoi_8.controller.singleton.DS_NV.getNVV(id));
+			if(DS_NV.getNVV(id)!= null) {
+				System.out.println("Tên: " +DS_NV.getNVV(id));
 				if (Bang_LichTruc.getID(id)!=null)
 					System.out.println("Vị trí: "+ Bang_LichTruc.getID(id).getViTri()+ " | Thời gian: "+ Bang_LichTruc.getID(id).getTime());
 				else System.out.println("Chưa có lịch nào");
 			}
 			
 			
-			if(Buoi_8.controller.singleton.DS_SV.getId(id)!=null) {
-				System.out.println("Tên: " +Buoi_8.controller.singleton.DS_SV.getId(id));
+			if(DS_SV.getId(id)!=null) {
+				System.out.println("Tên: " +DS_SV.getId(id));
 				if (Bang_LichHoc.getID(id)!=null)
 					System.out.println("Phòng: "+ Bang_LichHoc.getID(id).getPhong()+ " | Thời gian: "+ Bang_LichHoc.getID(id).getTime());
 				else System.out.println("Chưa có lịch nào");
